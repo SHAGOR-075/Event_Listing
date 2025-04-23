@@ -26,7 +26,7 @@ export const useEventStore = create((set, get) => ({
         url += `?${params.toString()}`
       }
       
-      const response = await axios.get('https://event-listing-kappa.vercel.app')
+      const response = await axios.get(url)
       set({ events: response.data, isLoading: false, error: null })
       return response.data
     } catch (error) {

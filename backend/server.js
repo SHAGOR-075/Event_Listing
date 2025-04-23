@@ -36,7 +36,7 @@ app.get('/', (req, res) => {
 // Connect to MongoDB
 const connectDB = async () => {
   try {
-    await mongoose.connect('mongodb+srv://eventlistingplatform:event1234@event-listing-platform.yjaugy2.mongodb.net/', {
+    await mongoose.connect('mongodb+srv://eventlistingplatform:event1234@event-listing-platform.yjaugy2.mongodb.net/?retryWrites=true&w=majority&appName=event-listing-platform', {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     })
