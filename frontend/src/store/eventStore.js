@@ -127,7 +127,7 @@ export const useEventStore = create((set, get) => ({
     set({ isLoading: true })
     
     try {
-      await axios.delete(`/api/events/${id}`)
+      await axios.delete(`https://event-listing-kappa.vercel.app/api/events/${id}`)
       
       // Update userEvents state
       set(state => ({
