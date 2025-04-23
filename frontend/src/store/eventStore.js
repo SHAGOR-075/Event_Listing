@@ -14,7 +14,7 @@ export const useEventStore = create((set, get) => ({
     set({ isLoading: true })
     
     try {
-      let url = '/api/events'
+      let url = 'https://event-listing-kappa.vercel.app/api/events'
       const params = new URLSearchParams()
       
       if (filters.category) params.append('category', filters.category)
@@ -26,7 +26,7 @@ export const useEventStore = create((set, get) => ({
         url += `?${params.toString()}`
       }
       
-      const response = await axios.get(url)
+      const response = await axios.get('https://event-listing-kappa.vercel.app')
       set({ events: response.data, isLoading: false, error: null })
       return response.data
     } catch (error) {
@@ -127,7 +127,7 @@ export const useEventStore = create((set, get) => ({
     set({ isLoading: true })
     
     try {
-      await axios.delete(`/api/events/${id}`)
+      await axios.delete(`https://event-listing-kappa.vercel.app/api/events/${id}`)
       
       // Update userEvents state
       set(state => ({
