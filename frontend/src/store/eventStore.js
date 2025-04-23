@@ -77,7 +77,7 @@ export const useEventStore = create((set, get) => ({
     set({ isLoading: true })
     
     try {
-      const response = await axios.post('/api/events', eventData)
+      const response = await axios.post('https://event-listing-kappa.vercel.app/api/events', eventData)
       
       // Update userEvents state
       set(state => ({ 
@@ -149,7 +149,7 @@ export const useEventStore = create((set, get) => ({
   // Save/unsave an event
   toggleSaveEvent: async (eventId) => {
     try {
-      await axios.post(`/api/events/${eventId}/save`)
+      await axios.post(`https://event-listing-kappa.vercel.app/api/events/${eventId}/save`)
       
       // Update savedEvents state
       set(state => {
