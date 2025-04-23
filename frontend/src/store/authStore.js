@@ -10,7 +10,7 @@ export const useAuthStore = create((set, get) => ({
   // Register a new user
   register: async (userData) => {
     try {
-      const response = await axios.post('/api/auth/register', userData)
+      const response = await axios.post('https://event-listing-kappa.vercel.app/api/auth/register', userData)
       return response.data
     } catch (error) {
       const message = error.response?.data?.message || 'Registration failed'
@@ -21,7 +21,7 @@ export const useAuthStore = create((set, get) => ({
   // Login user
   login: async (credentials) => {
     try {
-      const response = await axios.post('/api/auth/login', credentials)
+      const response = await axios.post('https://event-listing-kappa.vercel.app/api/auth/login', credentials)
       const { token, user } = response.data
       
       // Store token in localStorage
