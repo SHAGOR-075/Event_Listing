@@ -43,7 +43,7 @@ export const useEventStore = create((set, get) => ({
     set({ isLoading: true })
     
     try {
-      const response = await axios.get(`/api/events/${id}`)
+      const response = await axios.get(`https://event-listing-kappa.vercel.app/api/events/${id}`)
       set({ isLoading: false, error: null })
       return response.data
     } catch (error) {
@@ -60,7 +60,7 @@ export const useEventStore = create((set, get) => ({
     set({ isLoading: true })
     
     try {
-      const response = await axios.get('/api/events/user')
+      const response = await axios.get('https://event-listing-kappa.vercel.app/api/events/user')
       set({ userEvents: response.data, isLoading: false, error: null })
       return response.data
     } catch (error) {
@@ -101,7 +101,7 @@ export const useEventStore = create((set, get) => ({
     set({ isLoading: true })
     
     try {
-      const response = await axios.put(`/api/events/${id}`, eventData)
+      const response = await axios.put(`https://event-listing-kappa.vercel.app/api/events/${id}`, eventData)
       
       // Update userEvents state
       set(state => ({
@@ -186,7 +186,7 @@ export const useEventStore = create((set, get) => ({
     set({ isLoading: true })
     
     try {
-      const response = await axios.get('/api/events/saved')
+      const response = await axios.get('https://event-listing-kappa.vercel.app/api/events/saved')
       
       // Extract event IDs and full event details
       const eventIds = response.data.map(event => event._id)
