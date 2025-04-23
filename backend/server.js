@@ -17,7 +17,7 @@ const app = express()
 // Middleware
 app.use(cors({
   origin: ["https://event-listing-zy2x.vercel.app"],
-  methods: ["POST", "GET"],
+  methods: ["POST", "GET", "PUT"],
   credentials: true
 }))
 
